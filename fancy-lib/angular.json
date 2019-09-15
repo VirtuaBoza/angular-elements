@@ -7,7 +7,6 @@
       "projectType": "library",
       "root": "projects/fancy-form",
       "sourceRoot": "projects/fancy-form/src",
-      "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -31,12 +30,11 @@
               "projects/fancy-form/tsconfig.lib.json",
               "projects/fancy-form/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "fancy-form"
 }

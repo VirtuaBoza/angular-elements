@@ -7,7 +7,7 @@ export const actions = {
 };
 
 storiesOf('FancyForm', module).add('default', () => ({
-  template: `<lib-fancy-form [username]="username" (customSubmit)="onSubmit($event)"></lib-fancy-form>`,
+  template: `<fancy-form [username]="username" (customSubmit)="onSubmit($event)"></fancy-form>`,
   props: {
     username: 'VirtuaBoza',
     onSubmit: actions.customSubmit,

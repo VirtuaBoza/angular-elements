@@ -8,31 +8,50 @@ interface Form {
 }
 
 @Component({
-  selector: 'lib-fancy-form',
+  selector: 'fancy-form',
+  styles: [
+    `
+      .container {
+        max-width: 500px;
+      }
+
+      .title {
+        font-family: sans-serif;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .submit-container {
+        text-align: right;
+      }
+    `,
+  ],
   template: `
-    <p style="font-family: sans-serif;">
-      We want to hear from you, {{ username }}!
-    </p>
-    <div style="display: flex; flex-direction: column;">
-      <mat-form-field>
-        <input matInput placeholder="Subject" [(ngModel)]="subject" />
-      </mat-form-field>
-      <mat-form-field>
-        <textarea
-          matInput
-          placeholder="What would you like us to know?"
-          rows="6"
-          [(ngModel)]="body"
-        ></textarea>
-      </mat-form-field>
-      <div style="text-align: right;">
-        <button mat-raised-button color="primary" (click)="handleSubmit()">
-          SUBMIT
-        </button>
+    <div class="container">
+      <p class="title">We want to hear from you, {{ username }}!</p>
+      <div class="form">
+        <mat-form-field>
+          <input matInput placeholder="Subject" [(ngModel)]="subject" />
+        </mat-form-field>
+        <mat-form-field>
+          <textarea
+            matInput
+            placeholder="What would you like us to know?"
+            rows="6"
+            [(ngModel)]="body"
+          ></textarea>
+        </mat-form-field>
+        <div class="submit-container">
+          <button mat-raised-button color="primary" (click)="handleSubmit()">
+            SUBMIT
+          </button>
+        </div>
       </div>
     </div>
   `,
-  styles: [],
 })
 export class FancyFormComponent {
   @Input() username: string;
