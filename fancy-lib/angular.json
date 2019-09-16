@@ -7,6 +7,7 @@
       "projectType": "library",
       "root": "projects/fancy-form",
       "sourceRoot": "projects/fancy-form/src",
+      "prefix": "fancy",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
