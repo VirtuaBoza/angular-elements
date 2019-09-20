@@ -34,11 +34,17 @@ interface Form {
       <p class="title">We want to hear from you, {{ username }}!</p>
       <div class="form">
         <mat-form-field>
-          <input matInput placeholder="Subject" [(ngModel)]="subject" />
+          <input
+            matInput
+            name="subject"
+            placeholder="Subject"
+            [(ngModel)]="subject"
+          />
         </mat-form-field>
         <mat-form-field>
           <textarea
             matInput
+            name="body"
             placeholder="What would you like us to know?"
             rows="6"
             [(ngModel)]="body"
