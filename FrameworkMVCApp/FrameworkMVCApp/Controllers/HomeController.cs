@@ -23,8 +23,26 @@ namespace FrameworkMVCApp.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            var username = "VirtuaBoza";
+            var model = new ContactModel
+            {
+                Username = username,
+            };
 
-            return View();
+            return View(model);
         }
+
+        [HttpPost]
+        public ActionResult Contact(ContactModel model)
+        {
+            return View(model);
+        }
+    }
+
+    public class ContactModel
+    {
+        public string Username { get; set; }
+        public string Subject { get; set; }
+        public string Body { get; set; }
     }
 }
